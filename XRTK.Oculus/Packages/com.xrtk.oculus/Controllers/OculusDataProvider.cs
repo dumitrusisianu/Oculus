@@ -127,6 +127,7 @@ namespace XRTK.Oculus.Controllers
                     break;
             }
 
+            controllerType = typeof(OculusTouchController);
             var controllingHand = Handedness.Any;
 
             //Determine Handedness of the current controller
