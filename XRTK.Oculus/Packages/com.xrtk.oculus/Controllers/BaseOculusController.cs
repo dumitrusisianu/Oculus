@@ -125,6 +125,7 @@ namespace XRTK.Oculus.Controllers
                     case DeviceInputType.ButtonPress:
                     case DeviceInputType.TriggerPress:
                     case DeviceInputType.ThumbStickPress:
+                    case DeviceInputType.TouchpadPress:
                         UpdateButtonDataPress(Interactions[i]);
                         break;
                     case DeviceInputType.ButtonTouch:
@@ -292,6 +293,7 @@ namespace XRTK.Oculus.Controllers
                 if (((OculusApi.RawButton)currentState.Buttons & interactionButton) != 0 &&
                     ((OculusApi.RawButton)previousState.Buttons & interactionButton) == 0)
                 {
+                    Debug.LogError($"{interactionMapping.InputName} pressed!");
                     interactionMapping.BoolData = true;
                 }
 
@@ -315,6 +317,7 @@ namespace XRTK.Oculus.Controllers
                 if (((OculusApi.RawTouch)currentState.Touches & interactionButton) != 0 &&
                     ((OculusApi.RawTouch)previousState.Touches & interactionButton) == 0)
                 {
+                    Debug.LogError($"{interactionMapping.InputName} touched!");
                     interactionMapping.BoolData = true;
                 }
 
@@ -338,6 +341,7 @@ namespace XRTK.Oculus.Controllers
                 if (((OculusApi.RawNearTouch)currentState.NearTouches & interactionButton) != 0 &&
                     ((OculusApi.RawNearTouch)previousState.NearTouches & interactionButton) == 0)
                 {
+                    Debug.LogError($"{interactionMapping.InputName} near-touched!");
                     interactionMapping.BoolData = true;
                 }
 
