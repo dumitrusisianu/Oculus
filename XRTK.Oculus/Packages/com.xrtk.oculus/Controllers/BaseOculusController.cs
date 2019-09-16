@@ -317,7 +317,7 @@ namespace XRTK.Oculus.Controllers
                 if (((OculusApi.RawTouch)currentState.Touches & interactionButton) != 0 &&
                     ((OculusApi.RawTouch)previousState.Touches & interactionButton) == 0)
                 {
-                    Debug.LogError($"{interactionMapping.InputName} touched!");
+//                    Debug.LogError($"{interactionMapping.InputName} touched!");
                     interactionMapping.BoolData = true;
                 }
 
@@ -341,7 +341,7 @@ namespace XRTK.Oculus.Controllers
                 if (((OculusApi.RawNearTouch)currentState.NearTouches & interactionButton) != 0 &&
                     ((OculusApi.RawNearTouch)previousState.NearTouches & interactionButton) == 0)
                 {
-                    Debug.LogError($"{interactionMapping.InputName} near-touched!");
+//                    Debug.LogError($"{interactionMapping.InputName} near-touched!");
                     interactionMapping.BoolData = true;
                 }
 

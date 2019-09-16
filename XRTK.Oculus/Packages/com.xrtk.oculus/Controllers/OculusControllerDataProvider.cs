@@ -112,6 +112,7 @@ namespace XRTK.Oculus.Controllers
             if (!addController) { return null; }
 
             var currentControllerType = GetCurrentControllerType(controllerMask);
+            Debug.LogError($"Controller type detected: {currentControllerType}");
             Type controllerType = null;
 
             switch (currentControllerType)
@@ -166,6 +167,7 @@ namespace XRTK.Oculus.Controllers
 
             if (!detectedController.SetupConfiguration(controllerType))
             {
+                Debug.LogError("Failed to setup controller!!!");
                 // Controller failed to be setup correctly.
                 // Return null so we don't raise the source detected.
                 return null;
